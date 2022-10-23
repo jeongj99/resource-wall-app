@@ -1,0 +1,7 @@
+INSERT INTO created_posts (user_id, title, description, url, photo_url) VALUES (1, 'Grade 9 science virtual circuit lab', 'Awesome application to teach circuits for grade 9s learning from home!', 'https://phet.colorado.edu/sims/html/circuit-construction-kit-dc-virtual-lab/latest/circuit-construction-kit-dc-virtual-lab_en.html','https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc-600.png');
+
+INSERT INTO created_posts (user_id, title, description, url, photo_url) VALUES (2, 'Grade 11 biology dihybrid cross', 'Excellent video that illustrates how to execute a dihybrid cross. Cheers!', 'https://www.youtube.com/watch?v=eE8eF0WdVSc&ab_channel=MeredithKersting', 'https://i.ytimg.com/vi/OH438Uo5kaA/maxresdefault.jpg');
+
+INSERT INTO created_posts (user_id, title, description, url, photo_url) VALUES (3, 'Examedi - The Uber of Medical Treatment', 'This is a fantastic program that allows you to order medical doctors and services right to your door step.', 'https://examedi.com/cl/','https://bookface-images.s3.amazonaws.com/logos/f2d2a3a1c5c0b9d9c8851a55b7b30024e4380f48.png');
+
+INSERT INTO created_posts (user_id, title, description, url, photo_url) VALUES (4, 'VSCode - Keyboard Shortcuts', 'Here is a great document with all shortcuts for VS Code. Enjoy.', 'https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf','https://yt3.ggpht.com/_q52i8bUAEvcb7JR4e-eNTv23y2A_wg5sCz0NC0GrGtcw1CRMWJSOPVHUDh_bngD0q4gMvVeoA=s900-c-k-c0x00ffffff-no-rj');
