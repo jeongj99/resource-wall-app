@@ -29,15 +29,19 @@ app.use(express.static('public'));
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const myProfileRoute = require('./routes/myProfile');
-const searchRoute = require('./routes/search')
+const searchRoute = require('./routes/search');
+const registerRoute = require('./routes/register');
+const loginRoute = require('./routes/login');
 const userApiRoutes = require('./routes/users-api');
 const usersRoutes = require('./routes/users');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
-app.use('/my%20profile', myProfileRoute);
+app.use('/my-profile', myProfileRoute);
 app.use('/search', searchRoute);
+app.use('/register', registerRoute);
+app.use('/login', loginRoute);
 app.use('/api/users', userApiRoutes);
 app.use('/users', usersRoutes);
 // Note: mount other resources here, using the same pattern above
