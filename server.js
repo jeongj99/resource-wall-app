@@ -32,7 +32,7 @@ const myProfileRoute = require('./routes/myProfile');
 const searchRoute = require('./routes/search');
 const registerRoute = require('./routes/register');
 const loginRoute = require('./routes/login');
-const createPostRoute = require('./routes/createPost');
+const postRoute = require('./routes/post');
 const userApiRoutes = require('./routes/users-api');
 const usersRoutes = require('./routes/users');
 
@@ -43,7 +43,7 @@ app.use('/my-profile', myProfileRoute);
 app.use('/search', searchRoute);
 app.use('/register', registerRoute);
 app.use('/login', loginRoute);
-app.use('/create-post', createPostRoute);
+app.use('/post', postRoute);
 app.use('/api/users', userApiRoutes);
 app.use('/users', usersRoutes);
 // Note: mount other resources here, using the same pattern above
