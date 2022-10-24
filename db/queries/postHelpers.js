@@ -1,6 +1,6 @@
 const db = require('../connection');
 
-const getSearchedPosts = (query) => {
+const getSearchedPosts = query => {
   const params = [];
   for (const word of query) {
     params.push(`%${word}%`);
@@ -40,4 +40,23 @@ const getSearchedPosts = (query) => {
     });
 };
 
-module.exports = { getSearchedPosts };
+const getIndividualPost = id => {
+  const queryString = `
+  SELECT *
+  FROM created_posts
+  WHERE id = $1
+  `;
+
+  return db.query(queryString, [id])
+    .then(data => {
+      return data.rows[0];
+    })
+    .catch(error => {
+      console.log(error.message);
+    });
+};
+
+module.exports = {
+  getSearchedPosts,
+  getIndividualPost
+};
