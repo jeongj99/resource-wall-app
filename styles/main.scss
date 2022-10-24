@@ -1,5 +1,5 @@
 body {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   color: whitesmoke;
   background: linear-gradient(45deg, #ea4f4c 0%, #6d0019 100%);
   // display: flex;
@@ -22,6 +22,7 @@ body {
 
 .body-login-register {
   background-color: #222;
+  background-image: url("https://www.transparenttextures.com/patterns/black-twill.png");
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,4 +32,3 @@ body {
 .body-login-register:hover {
   box-shadow: 5px 10px #222;
 }
-
