@@ -56,7 +56,7 @@ const posts = require('./db/queries/home');
 
 app.get('/', (req, res) => {
   posts.getAllPosts().then(posts => {
-    res.render('index', {posts});
+    return res.render('index', { posts });
   });
 });
 
