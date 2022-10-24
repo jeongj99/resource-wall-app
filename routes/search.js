@@ -6,7 +6,6 @@ router.get('/', (req, res) => {
   if (req.query.posts) {
     const queryArray = req.query.posts.split(' ');
     searching.getSearchedPosts(queryArray).then(posts => {
-      console.log(posts);
       return res.render('index', { posts });
     })
       .catch(err => {
