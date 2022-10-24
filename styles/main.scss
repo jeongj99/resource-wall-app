@@ -27,9 +27,32 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 300;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
 }
 
 .body-login-register:hover {
   box-shadow: 5px 10px #222;
+}
+
+.body-create-post {
+  background-color:#222;
+  background-image: url("https://www.transparenttextures.com/patterns/black-twill.png");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-resource-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.mb-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
