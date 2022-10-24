@@ -1,0 +1,21 @@
+.register-inputs {
+  width: 30em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.register-form label {
+  padding-top: 1em;
+}
+
+.login-inputs {
+  width: 30em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.login-form label {
+  padding-top: 1em;
+}
