@@ -33,7 +33,7 @@ const searchRoute = require('./routes/search');
 const registerRoute = require('./routes/register');
 const loginRoute = require('./routes/login');
 const postRoute = require('./routes/post');
-const userApiRoutes = require('./routes/users-api');
+// const userApiRoutes = require('./routes/users-api');
 const usersRoutes = require('./routes/users');
 
 // Mount all resource routes
@@ -44,7 +44,7 @@ app.use('/search', searchRoute);
 app.use('/register', registerRoute);
 app.use('/login', loginRoute);
 app.use('/post', postRoute);
-app.use('/api/users', userApiRoutes);
+// app.use('/api/users', userApiRoutes);
 app.use('/users', usersRoutes);
 // Note: mount other resources here, using the same pattern above
 
@@ -52,8 +52,12 @@ app.use('/users', usersRoutes);
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
+const posts = require('./db/queries/home');
+
 app.get('/', (req, res) => {
-  res.render('index');
+  posts.getAllPosts().then(posts => {
+    res.render('index', {posts});
+  });
 });
 
 app.listen(PORT, () => {
