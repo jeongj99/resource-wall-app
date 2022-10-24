@@ -10,7 +10,7 @@ router.get('/create', (req, res) => {
 });
 
 router.post('/create', (req, res) => {
-  res.render('Create post');
+  res.render('');
 });
 
 router.get('/:id', (req, res) => {
