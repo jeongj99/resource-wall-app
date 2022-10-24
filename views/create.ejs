@@ -39,7 +39,7 @@
   <%- include('partials/_header') %>
     <main class="body-create-post" style="margin: 1.5em;">
       <h1>Create a <span style="font-family: 'Pacifico'">Resource!</span></h1>
-      <form class="create-resource-form"action="/create" method="POST">
+      <form class="create-resource-form"action="/post/create" method="POST">
         <div class="form-group mb-2">
           <label for="title">Add the title of your Resource</label>
           <input class="form-control" type="text" name="title" placeholder="title..."
@@ -50,16 +50,17 @@
               style="width: 300px; margin: 1em" />
             <div class="form-group mb-2">
               <label for="url">Add the url link to your Resource</label>
-              <input class="form-control" type="url" name="url" placeholder="url link..."
+              <input class="form-control" type="url" name="urlLink" placeholder="url link..."
                 style="width: 300px; margin: 1em" />
               <div class="form-group mb-2">
                 <label for="photo_url">Add the photo url link to your Resource</label>
-                <input class="form-control" type="url" name="url" placeholder="photo url link..."
+                <input class="form-control" type="url" name="photoUrl" placeholder="photo url link..."
                   style="width: 300px; margin: 1em" />
               </div>
             </div>
           </div>
         </div>
+        <!-- <input type="hidden" value="1" name="user_id" /> -->
         <button type="submit" class="btn btn-primary">Create</button>
 
 

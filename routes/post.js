@@ -1,6 +1,8 @@
 const express = require('express');
+const { createPost } = require('../db/queries/createPost');
 const router = express.Router();
 const postHelpers = require('../db/queries/postHelpers');
+
 
 router.get('/', (req, res) => {
   res.redirect('/');
@@ -10,8 +12,14 @@ router.get('/create', (req, res) => {
   res.render('create');
 });
 
-router.post('/create', (req, res) => {
-  res.render('');
+router.post('/create', async(req, res) => {
+  try {
+    const created = await createPost(req.body);
+    res.redirect('/')
+  } catch (error) {
+    res.send('Something went wrong');
+  }
+  // res.render('');
 });
 
 router.get('/:id', (req, res) => {
@@ -24,6 +32,18 @@ router.get('/:id', (req, res) => {
   })
     .catch(error => {
       console.log(error.message);
+    });
+});
+
+router.post('/properties', (req, res) => {
+  const userId = req.session.userId;
+  database.addProperty({...req.body, owner_id: userId})
+    .then(property => {
+      res.send(property);
+    })
+    .catch(e => {
+      console.error(e);
+      res.send(e)
     });
 });
 
