@@ -17,15 +17,15 @@ const getSearchedPosts = (query) => {
   FROM created_posts
   `;
 
-  for (let i = 1; i <= query.length; i++) {
-    if (i = query.length) {
+  for (let i = 1; i <= params.length; i++) {
+    if (i === params.length) {
       titleSearch += `LOWER($${i})`;
       descriptionSearch += `LOWER($${i})`;
       urlSearch += `LOWER($${i})`;
     } else {
-      titleSearch += `LOWER($${i}) OR `;
-      descriptionSearch += `LOWER($${i}) OR `;
-      urlSearch += `LOWER($${i}) OR `;
+      titleSearch += `LOWER($${i}) OR LOWER(title) LIKE `;
+      descriptionSearch += `LOWER($${i}) OR LOWER(description) LIKE `;
+      urlSearch += `LOWER($${i}) OR LOWER(url) LIKE `;
     }
   }
 
