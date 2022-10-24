@@ -14,7 +14,7 @@ router.get('/create', (req, res) => {
 router.post('/create', async(req, res) => {
   try {
     const created = await createPost(req.body);
-    res.json({created})
+    res.redirect('/')
   } catch (error) {
     res.send('Something went wrong');
   }
