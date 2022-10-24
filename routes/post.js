@@ -6,7 +6,11 @@ router.get('/', (req, res) => {
 });
 
 router.get('/create', (req, res) => {
-  res.send('Create post');
+  res.render('create');
+});
+
+router.post('/create', (req, res) => {
+  res.render('Create post');
 });
 
 router.get('/:id', (req, res) => {
