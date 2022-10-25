@@ -44,18 +44,17 @@
 
 <body>
   <%- include('partials/_header') %>
-    <main>
-      <article class="resource-wall">
+    <main class="resource-container">
+      <section class="resource-timeline">
         <% for (const post of posts) { %>
           <div class="resource-thumbnail">
-            <a href="/post/<%= post.id %>"></a>
+            <a href="/post/<%= post.id %>">
+            <img src="<%= post.photo_url %>" width="350" height="350">
+          </a>
             <%= post.title %>
           </div>
-          <section class="resource-image">
-            <img src="<%= post.photo_url %>" width="300" height="300">
-          </section>
-        </article>
           <% } %>
+        </section>
 
 
           <!-- <article class="property-listing">
