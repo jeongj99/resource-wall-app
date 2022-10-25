@@ -33,6 +33,7 @@
   <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/nav-bar.css" />
   <link rel="stylesheet" href="/styles/search-bar.css" />
+  <link rel="stylesheet" href="/styles/index.css" />
 
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
@@ -44,15 +45,39 @@
 <body>
   <%- include('partials/_header') %>
     <main>
-
+      <article class="resource-wall">
         <% for (const post of posts) { %>
-          <div>
-            <a href="/post/<%= post.id %>">
-              <img src="<%= post.photo_url %>">
-            </a>
+          <div class="resource-thumbnail">
+            <a href="/post/<%= post.id %>"></a>
             <%= post.title %>
           </div>
+          <section class="resource-image">
+            <img src="<%= post.photo_url %>" width="300" height="300">
+          </section>
+        </article>
           <% } %>
+
+
+          <!-- <article class="property-listing">
+              <section class="property-listing__preview-image">
+                <img src="${property.thumbnail_photo_url}" alt="house">
+              </section>
+              <section class="property-listing__details">
+                <h3 class="property-listing__title">${property.title}</h3>
+                <ul class="property-listing__details">
+                  <li>number_of_bedrooms: ${property.number_of_bedrooms}</li>
+                  <li>number_of_bathrooms: ${property.number_of_bathrooms}</li>
+                  <li>parking_spaces: ${property.parking_spaces}</li>
+                </ul>
+                ${isReservation ?
+                  `<p>${moment(property.start_date).format('ll')} - ${moment(property.end_date).format('ll')}</p>`
+                  : ``}
+                <footer class="property-listing__footer">
+                  <div class="property-listing__rating">${Math.round(property.average_rating * 100) / 100}/5 stars</div>
+                  <div class="property-listing__price">$${property.cost_per_night/100.0}/night</div>
+                </footer>
+              </section>
+            </article> -->
 
     </main>
 
