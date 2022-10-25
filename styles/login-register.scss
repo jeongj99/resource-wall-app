@@ -1,5 +1,7 @@
 .body-login-register {
   background-color: #222;
+  margin: auto;
+  margin-top: 1.5em;
   background-image: url("https://www.transparenttextures.com/patterns/black-twill.png");
   justify-content: center;
   display: flex;
@@ -14,6 +16,8 @@
 
 .body-login-register:hover {
   box-shadow: 5px 10px #222;
+}
+
 .register-inputs {
   width: 30em;
   display: flex;
