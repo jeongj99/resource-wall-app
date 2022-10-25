@@ -1,0 +1,18 @@
+.body-create-post {
+  background-color:#222;
+  background-image: url("https://www.transparenttextures.com/patterns/black-twill.png");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-resource-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.mb-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
