@@ -31,7 +31,11 @@
   align-items: center;
 }
 
-// Spaces out post description from URL above it.
+.url-link {
+  color: white;
+}
+
+// Spaces out post description from URL above it and provide background
 .post-description {
   margin-top: 2em;
 }
@@ -53,4 +57,9 @@
 //Space rate button from rating submission bar
 #rate-button {
   margin-left: 1em;
+}
+
+//Adjust size of comments header
+.comments-header {
+  font-size: x-large;
 }

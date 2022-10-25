@@ -52,8 +52,8 @@
         <button class="btn btn-primary"type="submit"><i class="fa-solid fa-bookmark"></i></button>
       </div>
       <div class="description-url-container">
-        <a class="url-link"href="<%= post.url %>"><%= post.url %></a>
-      <p class="post-description"><%= post.description %></p>
+        <a class="url-link"href="<%= post.url %>">URL LINK: <%= post.url %></a>
+      <p class="post-description">Description: <%= post.description %></p>
     </div>
     <form class="rating-form" action="" method="POST">
       <div class="form-group mb-2">
@@ -65,6 +65,10 @@
         </div>
       </div>
     </form>
+    <div class="comments-container">
+      <p class="comments-header">Comments:</p>
+
+    </div>
 
     </main>
 
