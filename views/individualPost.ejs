@@ -21,7 +21,7 @@
     rel="stylesheet">
 
 
-  <title>Home | Resource</title>
+  <title>Resource</title>
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,6 +33,7 @@
   <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/nav-bar.css" />
   <link rel="stylesheet" href="/styles/search-bar.css" />
+  <link rel="stylesheet" href="/styles/individual-post.css" />
 
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
@@ -43,9 +44,13 @@
 
 <body>
   <%- include('partials/_header') %>
-    <main>
+    <main class="individual-post-container">
       <h4><%= post.title %></h4>
-      <img src="<%= post.photo_url %>" >
+      <img src="<%= post.photo_url %>" width="500" height="500" >
+      <div class="buttons-container">
+        <button class="btn btn-primary"type="submit"><i class="fa-solid fa-wrench"></i></button>
+        <button class="btn btn-primary"type="submit"><i class="fa-solid fa-bookmark"></i></button>
+      </div>
       <p><%= post.description %></p>
       <a href="<%= post.url %>"><%= post.url %></a>
     </main>

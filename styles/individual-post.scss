@@ -1,0 +1,25 @@
+.individual-post-container {
+  margin: 2.0em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.buttons-container {
+  // Width here allows buttons container to span size of photo
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn.btn-primary {
+  margin-top: 1em;
+  background-color: #222;
+  border:#222;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
