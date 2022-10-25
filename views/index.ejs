@@ -44,16 +44,16 @@
 <body>
   <%- include('partials/_header') %>
     <main>
-      <ul>
+
         <% for (const post of posts) { %>
-          <li>
+          <div>
             <a href="/post/<%= post.id %>">
               <img src="<%= post.photo_url %>">
             </a>
             <%= post.title %>
-          </li>
+          </div>
           <% } %>
-      </ul>
+
     </main>
 
     <section class="search-bar" style="margin: 1em;">
