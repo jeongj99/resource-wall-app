@@ -42,7 +42,7 @@ router.post('/:id', (req, res) => {
 });
 
 //Delete - POST
-router.post('/:id', (req, res) => {
+router.post('/:id/delete', (req, res) => {
   console.log(req.params);
   res.send({ message: 'hello from Delete Post'});
 });

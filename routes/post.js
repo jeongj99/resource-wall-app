@@ -23,15 +23,6 @@ router.post('/create', async(req, res) => {
   // res.render('');
 });
 
-// router.post('/:id', async(req, res) => {
-//   try {
-//     const created = await createComment(req.body);
-//     res.redirect('/')
-//   } catch (error) {
-//     res.send('Something went wrong');
-//   }
-// });
-
 router.get('/:id', (req, res) => {
   const id = req.params.id;
   postHelpers.getIndividualPost(id).then(post => {
