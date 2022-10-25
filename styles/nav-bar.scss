@@ -42,6 +42,16 @@
   transition: all 0.3s ease-in-out;
 }
 
+nav .profile {
+  padding-bottom: 0.6em;
+  position: relative;
+  cursor: pointer;
+}
+
+nav .fa-user {
+  padding-right: 0.5em;
+}
+
 // If screen size becomes reaches 700 pixels or smaller
 @media only screen and (max-width: 700px) {
   .nav-left {

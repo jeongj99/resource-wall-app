@@ -4,21 +4,49 @@
       <a class="navbar-brand" href="">R</a>
       <div id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a id= "home-button" class="nav-item nav-link" href="/">Home</a>
+          <a id="home-button" class="nav-item nav-link" href="/">Home</a>
           <a class="nav-item nav-link" href="">About</a>
           <a class="nav-item nav-link" href="/post/create">Create <i class="fas fa-plus"></i></a>
         </div>
       </div>
     </div>
-    <div class="nav-right">
-      <div id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <div class="login-register">
-            <a class="nav-item nav-link" href="/login">Login</a>
-            <a class="nav-item nav-link" href="/register">Register</a>
+    <% if (userLoggedIn) { %>
+      <div class="nav-right">
+        <div class="profile">
+          <div class="icon-wrap">
+            <i class="fa-solid fa-user"></i>
+            <span class="name">
+              <%= user.handler %>
+            </span>
+            <i class="fa-solid fa-caret-down"></i>
+          </div>
+          <div class="profile_drop_down">
+            <ul class="profile_ul">
+              <li class="profile_li">
+                <a href="/my-profile" class="profile">
+                  <span>My Profile</span>
+                </a>
+              </li>
+              <li class="profile_li">
+                <form action="/logout" method="post">
+                  <button type="submit">Logout</button>
+                </form>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-    </div>
+      <% } else { %>
+        <div class="nav-right">
+          <div id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <div class="login-register">
+                <a class="nav-item nav-link" href="/login">Login</a>
+                <a class="nav-item nav-link" href="/register">Register</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% } %>
   </nav>
 </header>
