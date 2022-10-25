@@ -30,3 +30,27 @@
   flex-direction: column;
   align-items: center;
 }
+
+// Spaces out post description from URL above it.
+.post-description {
+  margin-top: 2em;
+}
+
+//Spaces out rating inputs from description and applies flex
+.rating-inputs {
+  width: 100%;
+  margin-top: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+//Space rating title from rating submission bar
+.rating-title {
+  padding-right: 1em;
+}
+
+//Space rate button from rating submission bar
+#rate-button {
+  margin-left: 1em;
+}
