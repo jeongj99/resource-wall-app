@@ -2,7 +2,12 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.render('login')
+  res.render('login');
+});
+
+router.post('/', (req, res) => {
+  console.log('------------------------------');
+  console.log(req.body);
 });
 
 module.exports = router;
