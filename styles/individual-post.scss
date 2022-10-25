@@ -37,12 +37,12 @@
 
 // Spaces out post description from URL above it and provide background
 .post-description {
+  margin: auto;
   margin-top: 2em;
 }
 
 //Spaces out rating inputs from description and applies flex
 .rating-inputs {
-  width: 100%;
   margin-top: 1em;
   display: flex;
   justify-content: space-between;
@@ -62,6 +62,7 @@
 //Put comment text area on top of comment buutton
 .post-comment-form {
   width: 100%;
+  margin: auto;
   display: flex;
   flex-direction: column;
 }

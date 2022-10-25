@@ -67,9 +67,10 @@
     </form>
     <section class="comments-container">
       <h2 class="comments-header">Comments:</h2>
-        <form id="post-comment-form" class="post-comment-form" method="POST" action="/tweets">
-            <textarea name="text" id="comment-text" class="comment-text"></textarea>
-            <button id="comment-post-button" class="comment-post-button" type="submit">Tweet</button>
+        <form id="post-comment-form" class="post-comment-form" method="POST" action="/api/comments">
+          <input name="post_id" type='text' value="<%= post.id %>" hidden/>
+            <textarea name="comment" id="comment-text" class="comment-text"></textarea>
+            <button id="comment-post-button" class="comment-post-button" type="submit">Comment</button>
         </form>
     </section>
 
