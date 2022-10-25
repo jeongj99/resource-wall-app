@@ -59,7 +59,19 @@
   margin-left: 1em;
 }
 
-//Adjust size of comments header
-.comments-header {
-  font-size: x-large;
+//Put comment text area on top of comment buutton
+.post-comment-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+//Apply space between comment text area and post button
+.comment-text {
+  margin-bottom: 0.5em;
+}
+
+.comment-post-button {
+  background-color: #222;
+  color: white;
 }

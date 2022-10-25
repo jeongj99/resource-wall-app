@@ -65,10 +65,13 @@
         </div>
       </div>
     </form>
-    <div class="comments-container">
-      <p class="comments-header">Comments:</p>
-
-    </div>
+    <section class="comments-container">
+      <h2 class="comments-header">Comments:</h2>
+        <form id="post-comment-form" class="post-comment-form" method="POST" action="/tweets">
+            <textarea name="text" id="comment-text" class="comment-text"></textarea>
+            <button id="comment-post-button" class="comment-post-button" type="submit">Tweet</button>
+        </form>
+    </section>
 
     </main>
 
