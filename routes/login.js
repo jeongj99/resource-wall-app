@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const loginHelpers = require('../db/queries/loginRegisterHelpers');
+const cookieSession = require('cookie-session');
+const bcrypt = require('bcryptjs');
 
 router.get('/', (req, res) => {
   res.render('login');
