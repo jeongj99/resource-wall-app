@@ -38,11 +38,16 @@ router.get('/:id', (req, res) => {
   postHelpers.getIndividualPost(id).then(post => {
     homeHelpers.getUserById(userLoggedIn).then(user => {
       postHelpers.getPostComments(id).then(comment => {
-        if (!post) {
-          return res.send('Post does not exist');
-        }
-        const templateVars = { post, comment, userLoggedIn, user };
-        return res.render('individualPost', templateVars);
+        postHelpers.getUserFolders(userLoggedIn).then(userFolders => {
+          if (!post) {
+            return res.send('Post does not exist');
+          }
+          const templateVars = { post, comment, userLoggedIn, user, userFolders };
+          return res.render('individualPost', templateVars);
+        })
+        .catch(error => {
+          console.log(error.message);
+        });
       })
         .catch(error => {
           console.log(error.message);

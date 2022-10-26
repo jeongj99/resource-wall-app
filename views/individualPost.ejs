@@ -108,7 +108,15 @@
                 <% } %>
 
             </section>
-            <p></p>
+            <section>
+              <% for (const value of userFolders) {%>
+                <div class="comments">
+                  <%= value.title %>
+                </div>
+                <% } %>
+
+            </section>
+
 
     </main>
 
