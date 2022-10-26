@@ -25,7 +25,7 @@ router.post('/', (req, res) => {
 });
 
 
-//Note: the reaminder of CRUD operations were added and kept as they will be worked on in the future.
+//Note: the remainder of CRUD operations were added and kept as they will be worked on in the future.
 
 //Read All - GET
 router.get('/', (req, res) => {
