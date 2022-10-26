@@ -1,10 +1,14 @@
 <head>
   <script>
     $(document).ready(function() {
-      $('.icon-wrap').click(function() {
+      $('.icon-wrap').click(function(event) {
+        event.stopPropagation();
         $(this).parent().toggleClass('active');
       });
-    })
+      $(document).click(function() {
+        $(this).find('.profile').removeClass('active');
+      });
+    });
   </script>
 </head>
 
