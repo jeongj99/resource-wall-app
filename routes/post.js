@@ -1,5 +1,6 @@
 const express = require('express');
 const { createPost } = require('../db/queries/createPost');
+// const { createComment } = require('../db/queries/createComment');
 const router = express.Router();
 const postHelpers = require('../db/queries/postHelpers');
 const homeHelpers = require('../db/queries/home');
@@ -36,26 +37,23 @@ router.get('/:id', (req, res) => {
   const id = req.params.id;
   postHelpers.getIndividualPost(id).then(post => {
     homeHelpers.getUserById(userLoggedIn).then(user => {
-      if (!post) {
-        return res.send('Post does not exist');
-      }
-      return res.render('individualPost', { post, userLoggedIn, user });
-    });
+      postHelpers.getPostComments(id).then(comment => {
+        if (!post) {
+          return res.send('Post does not exist');
+        }
+        const templateVars = { post, comment, userLoggedIn, user };
+        return res.render('individualPost', templateVars);
+      })
+        .catch(error => {
+          console.log(error.message);
+        });
+    })
+      .catch(error => {
+        console.log(error.message);
+      });
   })
     .catch(error => {
       console.log(error.message);
-    });
-});
-
-router.post('/properties', (req, res) => {
-  const userId = req.session.userId;
-  database.addProperty({ ...req.body, owner_id: userId })
-    .then(property => {
-      res.send(property);
-    })
-    .catch(e => {
-      console.error(e);
-      res.send(e);
     });
 });
 

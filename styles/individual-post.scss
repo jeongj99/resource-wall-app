@@ -30,3 +30,56 @@
   flex-direction: column;
   align-items: center;
 }
+
+.url-link {
+  color: white;
+}
+
+// Spaces out post description from URL above it and provide background
+.post-description {
+  margin: auto;
+  margin-top: 2em;
+}
+
+//Spaces out rating inputs from description and applies flex
+.rating-inputs {
+  margin-top: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+//Space rating title from rating submission bar
+.rating-title {
+  padding-right: 1em;
+}
+
+//Space rate button from rating submission bar
+#rate-button {
+  margin-left: 1em;
+}
+
+.comments-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+//Put comment text area on top of comment buutton
+.post-comment-form {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+//Apply space between comment text area and post button
+.comment-text {
+  margin-bottom: 0.5em;
+}
+
+.comment-post-button {
+  background-color: #222;
+  color: white;
+}

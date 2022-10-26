@@ -56,7 +56,24 @@ const getIndividualPost = id => {
     });
 };
 
+//Function to get all comments associated with a post.
+const getPostComments = id => {
+  const queryString = `
+  SELECT * FROM post_comments
+  WHERE post_id = $1`;
+
+  return db.query(queryString, [id])
+  .then(data => {
+    console.log('Data Rows', data.rows)
+    return data.rows;
+  })
+  .catch(error => {
+    console.log(error.message);
+  });
+};
+
 module.exports = {
   getSearchedPosts,
-  getIndividualPost
+  getIndividualPost,
+  getPostComments
 };
