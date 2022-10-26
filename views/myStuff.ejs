@@ -29,34 +29,13 @@
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/nav-bar.css" />
-  <link rel="stylesheet" href="/styles/search-bar.css" />
-  <link rel="stylesheet" href="/styles/login-register.css" />
 
-  <title>Resource | Login</title>
+  <title>Resource | My Stuff</title>
 </head>
 
 <body>
   <%- include('partials/_header') %>
 
-    <main class="body-login-register">
-      <h1>Login in to <span style="font-family: 'Pacifico'">Resource!</span></h1>
-      <h3>Login with your username and password below:</h3>
-      <form class="login-form" action="/login" method="POST">
-        <div class="form-group mb-2">
-          <div class="login-inputs">
-            <label for="email">Email:</label>
-            <input class="form-control" type="email" id="email" name="email" required
-              placeholder="Enter your username here..." style="width: 300px; margin: 1em 0" />
-          </div>
-          <div class="login-inputs">
-            <label for="pasword">Password:</label>
-            <input class="form-control" type="password" id="password" name="password" required
-              placeholder="Enter your password here..." style="width: 300px; margin: 1em 0" />
-          </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Login</button>
-      </form>
-    </main>
 </body>
 
 </html>
