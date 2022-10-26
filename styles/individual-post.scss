@@ -6,6 +6,18 @@
   justify-content: space-between;
 }
 
+//Allow for title and edit button to fall nicely in line and levelled with one another.
+.title-edit-header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+//Provide a bit of spacing between the edit button and title
+#edit-button {
+  margin-left: 1em;
+}
+
 .buttons-container {
   // Width here allows buttons container to span size of photo
   width: 30%;

@@ -45,8 +45,9 @@
 <body>
   <%- include('partials/_header') %>
     <main class="individual-post-container">
-      <h4>
+      <h4 class="title-edit-header">
         <%= post.title %>
+        <button id="edit-button"class="btn btn-primary" type="submit"><i class="fa-solid fa-wrench"></i></button>
       </h4>
       <% if (post.photo_url==='' ) { %>
         <img src="https://www.nbmchealth.com/wp-content/uploads/2018/04/default-placeholder.png" width="500"
