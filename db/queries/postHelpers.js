@@ -64,7 +64,6 @@ const getPostComments = id => {
 
   return db.query(queryString, [id])
   .then(data => {
-    console.log('Data Rows', data.rows)
     return data.rows;
   })
   .catch(error => {

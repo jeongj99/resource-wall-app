@@ -9,7 +9,7 @@ router.post('/', (req, res) => {
   console.log(req.body)
   const newRating = {
     rating: req.body.rating,
-    user_id: req.body.user_id,
+    user_id: req.session.user_id,
     post_id: req.body.post_id
   }
   ratingsQueries.createRating(newRating)

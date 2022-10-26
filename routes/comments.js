@@ -17,7 +17,6 @@ router.post('/', (req, res) => {
     user_id: 1,
     post_id: req.body.post_id
   }
-  console.log(req.body);
   commentsQueries.createComment(newComment)
   .then((comment) => {
     res.redirect(`/post/${req.body.post_id}`);
