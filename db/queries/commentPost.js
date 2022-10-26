@@ -1,5 +1,6 @@
 const db = require('../connection');
 
+//This function takes user input from comment text area and deposits it into the SQL database.
 const createComment = (body) => {
   console.log("createComm", body)
   const queryString =

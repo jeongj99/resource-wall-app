@@ -17,9 +17,10 @@ router.post('/', (req, res) => {
     user_id: 1,
     post_id: req.body.post_id
   }
+  console.log(req.body);
   commentsQueries.createComment(newComment)
   .then((comment) => {
-    res.send({ message: 'hello from create post', comment});
+    res.redirect(`/post/${req.body.post_id}`);
   })
 });
 
