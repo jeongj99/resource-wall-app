@@ -65,11 +65,10 @@
             </form>
             <form class="savePost-form" action="/api/savePost" method="POST">
               <input name="post_id" type='text' value="<%= post.id %>" hidden />
-              <select id="cars" name="cars">
-                <option value="volvo">Volvo XC90</option>
-                <option value="saab">Saab 95</option>
-                <option value="mercedes">Mercedes SLK</option>
-                <option value="audi">Audi TT</option>
+              <select id="userFolders" name="userFolders">
+                <% for (const value of userFolders) {%>
+                  <option value="<%= value.title %>"><%= value.title %></option>
+                  <% } %>
               </select>
             <button id="savePost-button" class="btn btn-primary" type="submit"><i class="fa-solid fa-bookmark"></i></button>
           </form>
@@ -108,16 +107,6 @@
                 <% } %>
 
             </section>
-            <section>
-              <% for (const value of userFolders) {%>
-                <div class="comments">
-                  <%= value.title %>
-                </div>
-                <% } %>
-
-            </section>
-
-
     </main>
 
     <!-- <section class="search-bar" style="margin: 1em;">
