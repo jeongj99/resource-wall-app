@@ -4,7 +4,16 @@ const db = require('../connection');
 
 const createRating = (body) => {
   const queryString =
-  'Insert into'
+  `INSERT into post_ratings (user_id, post_id, rating) VALUES ($1, $2, $3) RETURNING *`
+  return db.query(queryString, [body.user_id, body.post_id, body.rating])
+  .then((data) => {
+    console.log(data.rows[0]);
+    return data.rows[0];
+  })
+  .catch((err) => {
+    console.log(err.message);
+    return err;
+  });
 
 
 
