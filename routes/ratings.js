@@ -1,29 +1,22 @@
-/*
- * All routes for Users are defined here
- * Since this file is loaded in server.js into /users,
- *   these routes are mounted onto /users
- * See: https://expressjs.com/en/guide/using-middleware.html#middleware.router
- */
-
 const express = require('express');
 const router  = express.Router();
-const commentsQueries = require('../db/queries/commentPost')
+const ratingsQueries = require('../db/queries/ratingPost')
 
-//COMMENTS - REST API CRUD
+//Ratings - REST API CRUD
 //Create - POST
+
 router.post('/', (req, res) => {
-  const newComment = {
-    comment: req.body.comment,
+  console.log(req.body)
+  const newRating = {
+    rating: req.body.rating,
     user_id: req.session.user_id,
     post_id: req.body.post_id
   }
-  console.log(newComment);
-  commentsQueries.createComment(newComment)
-  .then((comment) => {
+  ratingsQueries.createRating(newRating)
+  .then((rating) => {
     res.redirect(`/post/${req.body.post_id}`);
   })
 });
-
 
 //Note: the remainder of CRUD operations were added and kept as they will be worked on in the future.
 

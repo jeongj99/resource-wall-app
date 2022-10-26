@@ -42,7 +42,8 @@ const loginRoute = require('./routes/login');
 const logoutRoute = require('./routes/logout');
 const postRoute = require('./routes/post');
 const usersRoutes = require('./routes/users');
-const commentsRoutes = require('./routes/comments');
+const commentsRoutes = require('./routes/comments')
+const ratingRoutes = require('./routes/ratings')
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -54,7 +55,8 @@ app.use('/login', loginRoute);
 app.use('/logout', logoutRoute);
 app.use('/post', postRoute);
 // app.use('/api/users', userApiRoutes);
-app.use('/api/comments', commentsRoutes);
+app.use('/api/comments', commentsRoutes)
+app.use('/api/ratings', ratingRoutes)
 app.use('/users', usersRoutes);
 // Note: mount other resources here, using the same pattern above
 

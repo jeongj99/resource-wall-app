@@ -19,7 +19,7 @@
 }
 
 .register-inputs {
-  width: 30em;
+  width: 26em;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -27,6 +27,11 @@
 
 .register-form label {
   padding-top: 1em;
+}
+
+.registration-button {
+  display: flex;
+  justify-content: center;
 }
 
 .login-inputs {

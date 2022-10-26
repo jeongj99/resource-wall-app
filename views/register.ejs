@@ -36,7 +36,7 @@
 
 <body>
   <%- include('partials/_header') %>
-    <main class="body-login-register" style="margin: 1.5em;">
+    <main class="body-login-register">
       <h1>Register for <span style="font-family: 'Pacifico'">Resource!</span></h1>
       <h3>All the resources you want, at the click of a button!</h3>
       <form class="register-form" action="/register" method="POST">
@@ -67,7 +67,9 @@
               placeholder="Enter your handler here..." style="width: 300px; margin: 1em 0" />
           </div>
         </div>
-        <button type="submit" class="btn btn-primary">Register</button>
+        <div class="registration-button">
+          <button type="submit" class="btn btn-primary" style="width: 450px;">Register</button>
+        </div>
       </form>
     </main>
 
