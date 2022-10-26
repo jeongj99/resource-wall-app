@@ -56,9 +56,10 @@
           <img src="<%= post.photo_url %>" width="500" height="500">
           <% } %>
             <div class="buttons-container">
-            <form class="saveFolder-form" action="" method="POST">
+            <form class="saveFolder-form" action="/api/saveFolder" method="POST">
               <input name="post_id" type='text' value="<%= post.id %>" hidden />
-              <input class="saveFolder-submission" type="text" id="saveFolder-submission" name="saveFolder" required
+              <!-- Note: the name of the input must match with the correct property in the entity relationship sql table, as well as routes files -->
+              <input class="saveFolder-submission" type="text" id="saveFolder-submission" name="title" required
               placeholder="Create a new folder here" style="width: 250px; margin: 1em 0" />
               <button id="saveFolder-button" type="submit" class="btn btn-primary">Submit</button>
             </form>

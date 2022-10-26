@@ -43,6 +43,7 @@ const usersRoutes = require('./routes/users');
 const commentsRoutes = require('./routes/comments')
 const ratingRoutes = require('./routes/ratings')
 const savePostRoutes = require('./routes/savePostRoutes')
+const saveFolderRoutes = require('./routes/saveFolderRoutes')
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -57,6 +58,7 @@ app.use('/post', postRoute);
 app.use('/api/comments', commentsRoutes)
 app.use('/api/ratings', ratingRoutes)
 app.use('/api/savePost', savePostRoutes)
+app.use('/api/saveFolder', saveFolderRoutes)
 app.use('/users', usersRoutes);
 // Note: mount other resources here, using the same pattern above
 
