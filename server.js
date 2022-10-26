@@ -6,6 +6,7 @@ const sassMiddleware = require('./lib/sass-middleware');
 const express = require('express');
 const morgan = require('morgan');
 const cookieSession = require('cookie-session');
+const methodOverride = require('method-override');
 
 const PORT = process.env.PORT || 8080;
 const app = express();
@@ -29,6 +30,7 @@ app.use(cookieSession({
   name: 'session',
   keys: ['alex', 'jordan']
 }));
+app.use(methodOverride('_method'));
 app.use(express.static('public'));
 
 // Separated Routes for each Resource
@@ -40,7 +42,7 @@ const loginRoute = require('./routes/login');
 const logoutRoute = require('./routes/logout');
 const postRoute = require('./routes/post');
 const usersRoutes = require('./routes/users');
-const commentsRoutes = require('./routes/comments')
+const commentsRoutes = require('./routes/comments');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -52,7 +54,7 @@ app.use('/login', loginRoute);
 app.use('/logout', logoutRoute);
 app.use('/post', postRoute);
 // app.use('/api/users', userApiRoutes);
-app.use('/api/comments', commentsRoutes)
+app.use('/api/comments', commentsRoutes);
 app.use('/users', usersRoutes);
 // Note: mount other resources here, using the same pattern above
 
