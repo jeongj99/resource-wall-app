@@ -42,7 +42,7 @@ const postRoute = require('./routes/post');
 const usersRoutes = require('./routes/users');
 const commentsRoutes = require('./routes/comments')
 const ratingRoutes = require('./routes/ratings')
-const savePostRoutes = ('./routes/savePostRoutes')
+const savePostRoutes = require('./routes/savePostRoutes')
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
