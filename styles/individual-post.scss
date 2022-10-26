@@ -22,7 +22,17 @@
   // Width here allows buttons container to span size of photo
   width: 30%;
   display: flex;
+
+  align-items: flex-end;
   justify-content: space-between;
+}
+
+#savePost-button {
+  margin-bottom: 0.9em;
+}
+
+#saveFolder-button {
+  margin-bottom: 0.8em;
 }
 
 .btn.btn-primary {

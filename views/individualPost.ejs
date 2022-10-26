@@ -56,10 +56,16 @@
           <img src="<%= post.photo_url %>" width="500" height="500">
           <% } %>
             <div class="buttons-container">
-              <form class="savePost-form" action="/api/savePost" method="POST">
-                <input name="post_id" type='text' value="<%= post.id %>" hidden />
-              <button id="save-button" class="btn btn-primary" type="submit"><i class="fa-solid fa-bookmark"></i></button>
+            <form class="saveFolder-form" action="" method="POST">
+              <input name="post_id" type='text' value="<%= post.id %>" hidden />
+              <input class="saveFolder-submission" type="text" id="saveFolder-submission" name="saveFolder" required
+              placeholder="Create a new folder here" style="width: 250px; margin: 1em 0" />
+              <button id="saveFolder-button" type="submit" class="btn btn-primary">Submit</button>
             </form>
+            <form class="savePost-form" action="/api/savePost" method="POST">
+              <input name="post_id" type='text' value="<%= post.id %>" hidden />
+            <button id="savePost-button" class="btn btn-primary" type="submit"><i class="fa-solid fa-bookmark"></i></button>
+          </form>
             </div>
             <div class="description-url-container">
               <a class="url-link" href="<%= post.url %>">URL LINK: <%= post.url %></a>
