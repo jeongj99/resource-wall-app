@@ -56,7 +56,10 @@
           <img src="<%= post.photo_url %>" width="500" height="500">
           <% } %>
             <div class="buttons-container">
-              <button class="btn btn-primary" type="submit"><i class="fa-solid fa-bookmark"></i></button>
+              <form class="savePost-form" action="/api/savePost" method="POST">
+                <input name="post_id" type='text' value="<%= post.id %>" hidden />
+              <button id="save-button" class="btn btn-primary" type="submit"><i class="fa-solid fa-bookmark"></i></button>
+            </form>
             </div>
             <div class="description-url-container">
               <a class="url-link" href="<%= post.url %>">URL LINK: <%= post.url %></a>
