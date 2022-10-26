@@ -71,8 +71,26 @@ const getPostComments = id => {
   });
 };
 
+//Function to get all comments associated with a user
+
+const getUserFolders = user_id => {
+  const queryString = `
+  SELECT * FROM folders
+  WHERE user_id = $1;`;
+
+  return db.query(queryString, [user_id])
+  .then(data => {
+    return data.rows;
+  })
+  .catch(error => {
+    console.log(error.message);
+  });
+
+}
+
 module.exports = {
   getSearchedPosts,
   getIndividualPost,
-  getPostComments
+  getPostComments,
+  getUserFolders
 };
