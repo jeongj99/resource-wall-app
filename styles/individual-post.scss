@@ -59,6 +59,13 @@
   margin-left: 1em;
 }
 
+.comments-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 //Put comment text area on top of comment buutton
 .post-comment-form {
   width: 100%;
