@@ -6,6 +6,7 @@ const ratingsQueries = require('../db/queries/ratingPost')
 //Create - POST
 
 router.post('/', (req, res) => {
+  console.log(req.body)
   const newRating = {
     rating: req.body.rating,
     user_id: req.body.user_id,

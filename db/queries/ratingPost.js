@@ -7,7 +7,7 @@ const createRating = (body) => {
   `INSERT INTO post_ratings (user_id, post_id, rating) VALUES ($1, $2, $3) RETURNING *`
   return db.query(queryString, [body.user_id, body.post_id, body.rating])
   .then((data) => {
-    console.log(data.rows[0]);
+    console.log(data.rows)
     return data.rows[0];
   })
   .catch((err) => {
