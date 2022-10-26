@@ -57,6 +57,7 @@
 //Space rate button from rating submission bar
 #rate-button {
   margin-left: 1em;
+  margin-bottom: 0.8em;
 }
 
 .comments-container {
@@ -80,6 +81,16 @@
 }
 
 .comment-post-button {
+  margin-bottom: 2em;
   background-color: #222;
   color: white;
+
+}
+
+.user-comments {
+  margin: 1em;
+  width: 45em;
+  height: 50px;
+
+  border-color: black;
 }

@@ -58,7 +58,6 @@
     <form class="rating-form" action="" method="POST">
       <div class="form-group mb-2">
         <div class="rating-inputs">
-          <label class="rating-title" for="rating">Rating:</label>
           <input class="rating-submission" type="text" id="rating-submission" name="rating" required
             placeholder="Please provide a rating out of 5" style="width: 300px; margin: 1em 0" />
             <button id="rate-button" type="submit" class="btn btn-primary">Rate</button>
@@ -73,19 +72,18 @@
             <button id="comment-post-button" class="comment-post-button" type="submit">Comment</button>
         </form>
     </section>
-    <section>
+    <section class="user-comments-on-post">
       <% for (const valueObj of comment) {%>
-        <div class="comments">
+        <div class="user-comments"> @userhandler
           <%= valueObj.comment %>
         </div>
         <% } %>
 
     </section>
-    <p></p>
 
     </main>
 
-    <section class="search-bar" style="margin: 1em;">
+    <!-- <section class="search-bar" style="margin: 1em;">
       <form class="search form-inline" action="/search" method="GET">
         <div class="form-group mb-2">
           <input id="search-input" class="form-control" type="text" name="posts"
@@ -93,7 +91,7 @@
           <button type="submit" class="btn btn-primary"> <i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
       </form>
-    </section>
+    </section> -->
 </body>
 
 </html>
