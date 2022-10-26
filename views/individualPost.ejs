@@ -45,16 +45,26 @@
 <body>
   <%- include('partials/_header') %>
     <main class="individual-post-container">
-      <h4><%= post.title %></h4>
-      <img src="<%= post.photo_url %>" width="500" height="500" >
-      <div class="buttons-container">
-        <button class="btn btn-primary"type="submit"><i class="fa-solid fa-wrench"></i></button>
-        <button class="btn btn-primary"type="submit"><i class="fa-solid fa-bookmark"></i></button>
-      </div>
-      <div class="description-url-container">
-      <p><%= post.description %></p>
-      <a href="<%= post.url %>"><%= post.url %></a>
-    </div>
+      <h4>
+        <%= post.title %>
+      </h4>
+      <% if (post.photo_url==='' ) { %>
+        <img src="https://www.nbmchealth.com/wp-content/uploads/2018/04/default-placeholder.png" width="500" height="500">
+        <% } else { %>
+          <img src="<%= post.photo_url %>" width="500" height="500">
+          <% } %>
+            <div class="buttons-container">
+              <button class="btn btn-primary" type="submit"><i class="fa-solid fa-wrench"></i></button>
+              <button class="btn btn-primary" type="submit"><i class="fa-solid fa-bookmark"></i></button>
+            </div>
+            <div class="description-url-container">
+              <p>
+                <%= post.description %>
+              </p>
+              <a href="<%= post.url %>">
+                <%= post.url %>
+              </a>
+            </div>
     </main>
 
     <section class="search-bar" style="margin: 1em;">

@@ -1,3 +1,13 @@
+<head>
+  <script>
+    $(document).ready(function() {
+      $('.icon-wrap').click(function() {
+        $(this).parent().toggleClass('active');
+      });
+    })
+  </script>
+</head>
+
 <header>
   <nav class="navbar navbar-expand-md navbar-dark">
     <div class="nav-left">
@@ -23,13 +33,13 @@
           <div class="profile_drop_down">
             <ul class="profile_ul">
               <li class="profile_li">
-                <a href="/my-profile" class="profile">
+                <a href="/my-profile" class="menu">
                   <span>My Profile</span>
                 </a>
               </li>
               <li class="profile_li">
-                <form action="/logout" method="post">
-                  <button type="submit">Logout</button>
+                <form class="menu" action="/logout" method="post">
+                  <button type="submit">LOGOUT</button>
                 </form>
               </li>
             </ul>

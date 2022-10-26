@@ -49,15 +49,19 @@
         <% for (const post of posts) { %>
           <div class="resource-thumbnail">
             <a href="/post/<%= post.id %>">
-            <img src="<%= post.photo_url %>" width="350" height="350">
-          </a>
+              <% if (post.photo_url === '' ) { %>
+                <img src="https://www.nbmchealth.com/wp-content/uploads/2018/04/default-placeholder.png" width="350" height="350">
+                <% } else { %>
+                  <img src="<%= post.photo_url %>" width="350" height="350">
+                  <% } %>
+            </a>
             <%= post.title %>
           </div>
           <% } %>
-        </section>
+      </section>
 
 
-          <!-- <article class="property-listing">
+      <!-- <article class="property-listing">
               <section class="property-listing__preview-image">
                 <img src="${property.thumbnail_photo_url}" alt="house">
               </section>
