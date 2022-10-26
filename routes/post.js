@@ -26,15 +26,17 @@ router.post('/create', async(req, res) => {
 router.get('/:id', (req, res) => {
   const id = req.params.id;
   postHelpers.getIndividualPost(id).then(post => {
-    if (!post) {
-      return res.send('Post does not exist');
-    }
-    const templateVars = { post }
-    return res.render('individualPost', templateVars);
-  })
+    postHelpers.getPostComments(id).then(comment => {
+      if (!post) {
+        return res.send('Post does not exist');
+      }
+      const templateVars = { post, comment }
+      return res.render('individualPost', templateVars);
+    })
     .catch(error => {
       console.log(error.message);
     });
+  })
 });
 
 module.exports = router;

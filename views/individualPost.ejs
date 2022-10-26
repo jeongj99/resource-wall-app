@@ -73,6 +73,15 @@
             <button id="comment-post-button" class="comment-post-button" type="submit">Comment</button>
         </form>
     </section>
+    <section>
+      <% for (const valueObj of comment) {%>
+        <div class="comments">
+          <%= valueObj.comment %>
+        </div>
+        <% } %>
+
+    </section>
+    <p></p>
 
     </main>
 

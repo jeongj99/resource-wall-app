@@ -20,7 +20,6 @@ router.post('/', (req, res) => {
   commentsQueries.createComment(newComment)
   .then((comment) => {
     res.send({ message: 'hello from create post', comment});
-
   })
 });
 
