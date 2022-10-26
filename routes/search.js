@@ -6,7 +6,8 @@ router.get('/', (req, res) => {
   if (req.query.posts) {
     const queryArray = req.query.posts.split(' ');
     postHelpers.getSearchedPosts(queryArray).then(posts => {
-      return res.render('index', { posts });
+      const userLoggedIn = req.session.user_id;
+      return res.render('index', { posts, userLoggedIn});
     })
       .catch(err => {
         console.log(err.message);

@@ -45,41 +45,51 @@
 <body>
   <%- include('partials/_header') %>
     <main class="individual-post-container">
-      <h4><%= post.title %></h4>
-      <img src="<%= post.photo_url %>" width="500" height="500" >
-      <div class="buttons-container">
-        <button class="btn btn-primary"type="submit"><i class="fa-solid fa-wrench"></i></button>
-        <button class="btn btn-primary"type="submit"><i class="fa-solid fa-bookmark"></i></button>
-      </div>
-      <div class="description-url-container">
-        <a class="url-link"href="<%= post.url %>">URL LINK: <%= post.url %></a>
-      <p class="post-description">Description: <%= post.description %></p>
-    </div>
-    <form class="rating-form" action="" method="POST">
-      <div class="form-group mb-2">
-        <div class="rating-inputs">
-          <input class="rating-submission" type="text" id="rating-submission" name="rating" required
-            placeholder="Please provide a rating out of 5" style="width: 300px; margin: 1em 0" />
-            <button id="rate-button" type="submit" class="btn btn-primary">Rate</button>
-        </div>
-      </div>
-    </form>
-    <section class="comments-container">
-      <h2 class="comments-header">Comments:</h2>
-        <form id="post-comment-form" class="post-comment-form" method="POST" action="/api/comments">
-          <input name="post_id" type='text' value="<%= post.id %>" hidden/>
-            <textarea name="comment" id="comment-text" class="comment-text"></textarea>
-            <button id="comment-post-button" class="comment-post-button" type="submit">Comment</button>
-        </form>
-    </section>
-    <section class="user-comments-on-post">
-      <% for (const valueObj of comment) {%>
-        <div class="user-comments"> @userhandler
-          <%= valueObj.comment %>
-        </div>
-        <% } %>
+      <h4>
+        <%= post.title %>
+      </h4>
+      <% if (post.photo_url==='' ) { %>
+        <img src="https://www.nbmchealth.com/wp-content/uploads/2018/04/default-placeholder.png" width="500"
+          height="500">
+        <% } else { %>
+          <img src="<%= post.photo_url %>" width="500" height="500">
+          <% } %>
+            <div class="buttons-container">
+              <button class="btn btn-primary" type="submit"><i class="fa-solid fa-wrench"></i></button>
+              <button class="btn btn-primary" type="submit"><i class="fa-solid fa-bookmark"></i></button>
+            </div>
+            <div class="description-url-container">
+              <a class="url-link" href="<%= post.url %>">URL LINK: <%= post.url %></a>
+              <p class="post-description">Description: <%= post.description %>
+              </p>
+            </div>
+            <form class="rating-form" action="" method="POST">
+              <div class="form-group mb-2">
+                <div class="rating-inputs">
+                  <label class="rating-title" for="rating">Rating:</label>
+                  <input class="rating-submission" type="text" id="rating-submission" name="rating" required
+                    placeholder="Please provide a rating out of 5" style="width: 300px; margin: 1em 0" />
+                  <button id="rate-button" type="submit" class="btn btn-primary">Rate</button>
+                </div>
+              </div>
+            </form>
+            <section class="comments-container">
+              <h2 class="comments-header">Comments:</h2>
+              <form id="post-comment-form" class="post-comment-form" method="POST" action="/api/comments">
+                <input name="post_id" type='text' value="<%= post.id %>" hidden />
+                <textarea name="comment" id="comment-text" class="comment-text"></textarea>
+                <button id="comment-post-button" class="comment-post-button" type="submit">Comment</button>
+              </form>
+            </section>
+            <section>
+              <% for (const valueObj of comment) {%>
+                <div class="comments">
+                  <%= valueObj.comment %>
+                </div>
+                <% } %>
 
-    </section>
+            </section>
+            <p></p>
 
     </main>
 

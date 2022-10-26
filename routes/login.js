@@ -1,21 +1,25 @@
 const express = require('express');
 const router = express.Router();
 const loginHelpers = require('../db/queries/loginRegisterHelpers');
-const cookieSession = require('cookie-session');
 const bcrypt = require('bcryptjs');
 
-router.use(cookieSession({
-  name: 'session',
-  keys: ['alex', 'jordan']
-}));
-
 router.get('/', (req, res) => {
-  res.render('login');
+  if (req.session.user_id) {
+    res.redirect('/');
+  } else {
+    const templateVars = {
+      userLoggedIn: req.session.user_id
+    }
+    res.render('login', templateVars);
+  }
 });
 
 router.post('/', (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
+  if (req.session.user_id) {
+    return res.redirect('/');
+  }
   loginHelpers.getUserByEmail(email).then(user => {
     if (!user || !bcrypt.compareSync(password, user.password)) {
       return res.send('failed login');

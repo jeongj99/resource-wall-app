@@ -5,6 +5,7 @@ require('dotenv').config();
 const sassMiddleware = require('./lib/sass-middleware');
 const express = require('express');
 const morgan = require('morgan');
+const cookieSession = require('cookie-session');
 
 const PORT = process.env.PORT || 8080;
 const app = express();
@@ -24,6 +25,10 @@ app.use(
     isSass: false, // false => scss, true => sass
   })
 );
+app.use(cookieSession({
+  name: 'session',
+  keys: ['alex', 'jordan']
+}));
 app.use(express.static('public'));
 
 // Separated Routes for each Resource
@@ -32,8 +37,8 @@ const myProfileRoute = require('./routes/myProfile');
 const searchRoute = require('./routes/search');
 const registerRoute = require('./routes/register');
 const loginRoute = require('./routes/login');
+const logoutRoute = require('./routes/logout');
 const postRoute = require('./routes/post');
-// const userApiRoutes = require('./routes/users-api');
 const usersRoutes = require('./routes/users');
 const commentsRoutes = require('./routes/comments')
 
@@ -44,6 +49,7 @@ app.use('/my-profile', myProfileRoute);
 app.use('/search', searchRoute);
 app.use('/register', registerRoute);
 app.use('/login', loginRoute);
+app.use('/logout', logoutRoute);
 app.use('/post', postRoute);
 // app.use('/api/users', userApiRoutes);
 app.use('/api/comments', commentsRoutes)
@@ -54,11 +60,19 @@ app.use('/users', usersRoutes);
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
-const posts = require('./db/queries/home');
+const homeHelpers = require('./db/queries/home');
 
 app.get('/', (req, res) => {
-  posts.getAllPosts().then(posts => {
-    return res.render('index', { posts });
+  const userLoggedIn = req.session.user_id;
+  const templateVars = {
+    userLoggedIn
+  };
+  homeHelpers.getAllPosts().then(posts => {
+    templateVars.posts = posts;
+    homeHelpers.getUserById(userLoggedIn).then(user => {
+      templateVars.user = user;
+      return res.render('index', templateVars);
+    });
   });
 });
 

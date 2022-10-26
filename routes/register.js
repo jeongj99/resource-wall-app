@@ -1,20 +1,24 @@
 const express = require('express');
 const router = express.Router();
 const registerHelpers = require('../db/queries/loginRegisterHelpers');
-const cookieSession = require('cookie-session');
 const bcrypt = require('bcryptjs');
 
-router.use(cookieSession({
-  name: 'session',
-  keys: ['alex', 'jordan']
-}));
-
 router.get('/', (req, res) => {
-  res.render('register');
+  if (req.session.user_id) {
+    res.redirect('/');
+  } else {
+    const templateVars = {
+      userLoggedIn: req.session.user_id
+    };
+    res.render('register', templateVars);
+  }
 });
 
 router.post('/', (req, res) => {
   const { firstName, lastName, email, password, handler } = req.body;
+  if (req.session.user_id) {
+    return res.redirect('/');
+  }
   registerHelpers.getUserByEmail(email).then(user => {
     if (user) {
       return res.send('email already taken');
