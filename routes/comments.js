@@ -6,22 +6,25 @@
  */
 
 const express = require('express');
-const router  = express.Router();
-const commentsQueries = require('../db/queries/commentPost')
+const router = express.Router();
+const commentsQueries = require('../db/queries/commentPost');
 
 //COMMENTS - REST API CRUD
 //Create - POST
 router.post('/', (req, res) => {
+  if (!req.session.user_id) {
+    return res.redirect('/login');
+  }
   const newComment = {
     comment: req.body.comment,
     user_id: req.session.user_id,
     post_id: req.body.post_id
-  }
+  };
   console.log(newComment);
   commentsQueries.createComment(newComment)
-  .then((comment) => {
-    res.redirect(`/post/${req.body.post_id}`);
-  })
+    .then((comment) => {
+      res.redirect(`/post/${req.body.post_id}`);
+    });
 });
 
 
@@ -29,25 +32,25 @@ router.post('/', (req, res) => {
 
 //Read All - GET
 router.get('/', (req, res) => {
-  res.send({ message: 'hello from Read all'});
+  res.send({ message: 'hello from Read all' });
 });
 
 //Read one - GET
 router.get('/:id', (req, res) => {
   console.log(req.params);
-  res.send({ message: 'hello from Read one'});
+  res.send({ message: 'hello from Read one' });
 });
 
 //Update - POST
 router.post('/:id', (req, res) => {
   console.log(req.params);
-  res.send({ message: 'hello from Update Post'});
+  res.send({ message: 'hello from Update Post' });
 });
 
 //Delete - POST
 router.post('/:id/delete', (req, res) => {
   console.log(req.params);
-  res.send({ message: 'hello from Delete Post'});
+  res.send({ message: 'hello from Delete Post' });
 });
 
 module.exports = router;
