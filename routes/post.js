@@ -40,14 +40,14 @@ router.get('/:id', (req, res) => {
       postHelpers.getPostComments(id).then(comment => {
         postHelpers.getUserFolders(userLoggedIn).then(userFolders => {
           if (!post) {
-            return res.send('Post does not exist');
+            return res.render('./errors/postDNE', { userLoggedIn, id });
           }
           const templateVars = { post, comment, userLoggedIn, user, userFolders };
           return res.render('individualPost', templateVars);
         })
-        .catch(error => {
-          console.log(error.message);
-        });
+          .catch(error => {
+            console.log(error.message);
+          });
       })
         .catch(error => {
           console.log(error.message);
