@@ -24,7 +24,7 @@ router.get('/create', (req, res) => {
 
 router.post('/create', async (req, res) => {
   try {
-    const created = await createPost(req.body);
+    const created = await createPost(req.session.user_id, req.body);
     res.redirect('/');
   } catch (error) {
     res.send('Something went wrong');
