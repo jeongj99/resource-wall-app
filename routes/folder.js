@@ -13,14 +13,12 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
   const userLoggedIn = req.session.user_id;
+  const id = req.params.id;
   if (!userLoggedIn) {
     return res.redirect('/login');
   }
-  folderFinderHelper.getFolderByFolderId(req.params.id).then(folder => {
-    if (!folder) {
-      return res.send('Folder does not exist');
-    }
-    Promise.all([homeHelpers.getUserById(userLoggedIn), savePostHelpers.getSavedPostsByFolderId(req.params.id)]).then(results => {
+  folderFinderHelper.getFolderByFolderId(id).then(folder => {
+    Promise.all([homeHelpers.getUserById(userLoggedIn), savePostHelpers.getSavedPostsByFolderId(id)]).then(results => {
       const user = results[0];
       const savedPosts = results[1];
       const postIds = [];
@@ -34,6 +32,9 @@ router.get('/:id', (req, res) => {
           user,
           posts
         };
+        if (!folder) {
+          return res.render('./errors/folderDNE', { userLoggedIn, id, user });
+        }
         if (folder.user_id !== userLoggedIn) {
           return res.send('You do not have access to this folder');
         }

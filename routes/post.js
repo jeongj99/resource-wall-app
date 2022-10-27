@@ -40,7 +40,7 @@ router.get('/:id', (req, res) => {
       postHelpers.getPostComments(id).then(comment => {
         postHelpers.getUserFolders(userLoggedIn).then(userFolders => {
           if (!post) {
-            return res.render('./errors/postDNE', { userLoggedIn, id });
+            return res.render('./errors/postDNE', { userLoggedIn, id, user });
           }
           const templateVars = { post, comment, userLoggedIn, user, userFolders };
           return res.render('individualPost', templateVars);
