@@ -60,24 +60,28 @@
         <div class="allPosts">
           <% for (const post of posts) { %>
             <div class="eachPost">
-              <a href="/post/<%= post.id %>">
-                <% if (post.photo_url==='' ) { %>
+              <% if (post.photo_url==='' ) { %>
+                <a href="/post/<%= post.id %>">
                   <div class="imageContainer">
-                    <img src="https://www.nbmchealth.com/wp-content/uploads/2018/04/default-placeholder.png" width="350"
-                      height="350">
-                  </div>
-                  <% } else { %>
+                    <img src="https://www.nbmchealth.com/wp-content/uploads/2018/04/default-placeholder.png"
+                      width="200px" height="200px">
+                </a>
+                <div class="postTitle">
+                  <%= post.title %>
+                </div>
+                <% } else { %>
+                  <a href="/post/<%= post.id %>">
                     <div class="imageContainer">
-                      <img src="<%= post.photo_url %>">
-                      <% } %>
-                    </div>
-              </a>
-              <span class="postTitle">
-                <%= post.title %>
-              </span>
+                      <img src="<%= post.photo_url %>" width="200px" height="200px">
+                  </a>
+                  <div class="postTitle">
+                    <%= post.title %>
+                  </div>
+                  <% } %>
             </div>
-            <% } %>
         </div>
+        <% } %>
+          </div>
       </section>
     </main>
 

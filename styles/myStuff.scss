@@ -28,7 +28,13 @@
   align-content: center;
 }
 
-.eachFolder,
+.eachFolder {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  padding: 0 15%;
+}
+
 .eachPost {
   display: flex;
   flex-direction: column;
@@ -46,11 +52,6 @@
 
 .eachFolder a {
   font-size: 100px;
-}
-
-.eachPost a img {
-  height: 200px;
-  width: 200px;
 }
 
 .postTitle {
