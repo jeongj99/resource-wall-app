@@ -1,6 +1,12 @@
-.myStuffHeaders {
-  width: 100%;
-  text-align: center;
+// .myStuffHeaders {
+//   width: 100%;
+//   text-align: center;
+// }
+
+.headers {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .myFolders {
@@ -57,3 +63,4 @@
 .postTitle {
   text-align: center;
 }
+

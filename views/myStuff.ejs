@@ -40,7 +40,15 @@
 <body>
   <%- include('partials/_header') %>
     <main>
-      <h2 class="myStuffHeaders">My Folders</h2>
+      <div class="headers">
+        <h2 class="myStuffHeaders">My Folders</h2>
+        <form class="saveFolder-form" action="/my-stuff" method="POST">
+          <!-- Note: the name of the input must match with the correct property in the entity relationship sql table, as well as routes files -->
+          <input class="saveFolder-submission" type="text" id="saveFolder-submission" name="title" required
+            placeholder="Create a new folder here" style="width: 200px; margin: 1em 0" />
+          <button id="saveFolder-button" type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
       <section class="myFolders">
         <div class="allFolders">
           <% for (const folder of folders) { %>
@@ -55,7 +63,9 @@
             <% } %>
         </div>
       </section>
-      <h2 class="myStuffHeaders">My Posts</h2>
+      <div class="headers">
+        <h2 class="myStuffHeaders">My Posts</h2>
+      </div>
       <section class="myPosts">
         <div class="allPosts">
           <% for (const post of posts) { %>
