@@ -49,35 +49,4 @@ router.get('/:id', (req, res) => {
     });
 });
 
-
-// router.get('/:id', (req, res) => {
-//   const userLoggedIn = req.session.user_id;
-//   const id = req.params.id;
-//   postHelpers.getIndividualPost(id).then(post => {
-//     homeHelpers.getUserById(userLoggedIn).then(user => {
-//       postHelpers.getPostComments(id).then(comment => {
-//         postHelpers.getUserFolders(userLoggedIn).then(userFolders => {
-//           if (!post) {
-//             return res.send('Post does not exist');
-//           }
-//           const templateVars = { post, comment, userLoggedIn, user, userFolders };
-//           return res.render('individualPost', templateVars);
-//         })
-//           .catch(error => {
-//             console.log(error.message);
-//           });
-//       })
-//         .catch(error => {
-//           console.log(error.message);
-//         });
-//     })
-//       .catch(error => {
-//         console.log(error.message);
-//       });
-//   })
-//     .catch(error => {
-//       console.log(error.message);
-//     });
-// });
-
 module.exports = router;
