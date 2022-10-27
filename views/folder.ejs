@@ -49,7 +49,7 @@
       <h2 id="folderTitle">
         <%= folder.title %>
       </h2>
-      <% if (!posts) { %>
+      <% if (savedPosts.length===0) { %>
         <h3 id="folderEmpty">Folder is empty</h3>
         <% } else { %>
           <section class="resource-timeline">

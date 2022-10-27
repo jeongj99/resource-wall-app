@@ -22,27 +22,32 @@ router.get('/:id', (req, res) => {
       const user = results[0];
       const savedPosts = results[1];
       const postIds = [];
-      for (const savedPost of savedPosts) {
-        postIds.push(savedPost.post_id);
+      if (!folder) {
+        return res.render('./errors/folderDNE', { userLoggedIn, id, user });
       }
-      savePostHelpers.getAllPostsInfoThatAreSaved(postIds).then(posts => {
-        const templateVars = {
-          folder,
-          userLoggedIn,
-          user,
-          posts
-        };
-        if (!folder) {
-          return res.render('./errors/folderDNE', { userLoggedIn, id, user });
+      if (folder.user_id !== userLoggedIn) {
+        return res.render('./errors/folderNoAccess', { userLoggedIn, id, user });
+      }
+      if (savedPosts.length !== 0) {
+        for (const savedPost of savedPosts) {
+          postIds.push(savedPost.post_id);
         }
-        if (folder.user_id !== userLoggedIn) {
-          return res.send('You do not have access to this folder');
-        }
-        return res.render('folder', templateVars);
-      })
-        .catch(error => {
-          console.log(error.message);
-        });
+        savePostHelpers.getAllPostsInfoThatAreSaved(postIds).then(posts => {
+          const templateVars = {
+            folder,
+            userLoggedIn,
+            user,
+            posts,
+            savedPosts
+          };
+          return res.render('folder', templateVars);
+        })
+          .catch(error => {
+            console.log(error.message);
+          });
+      } else {
+        return res.render('folder', { folder, userLoggedIn, user, savedPosts });
+      }
     });
   })
     .catch(error => {
