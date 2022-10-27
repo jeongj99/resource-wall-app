@@ -1,3 +1,4 @@
+
 // .navbar * {
 //   margin: 0;
 //   padding: 0;
@@ -26,7 +27,7 @@ a {
 
 .navbar-brand {
   display: flex;
-  font-family: 'Pacifico';
+  font-family: "Pacifico";
   font-size: xx-large;
 }
 
@@ -63,9 +64,14 @@ a {
 
 //This allows for spacing between the search bar and button
 
+.nav-center {
+  width: 100%;
+  max-width: 32em;
+}
 #nav-search-input {
   margin-right: 1em;
-  width: 30em;
+  width: auto;
+  flex-grow: 1;
 }
 
 //Starting here we will address things on the right side of nav BAR
@@ -73,6 +79,13 @@ nav .profile {
   padding-right: 1em;
   padding-bottom: 0.6em;
   position: relative;
+}
+
+#search-form {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  margin: 0;
 }
 
 nav .icon-wrap {
