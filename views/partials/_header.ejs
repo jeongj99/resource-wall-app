@@ -12,14 +12,14 @@
   </script>
 </head>
 
-<header>
+<header class="entire-nav-bar">
   <nav class="navbar navbar-expand-md navbar-dark">
     <div class="nav-left">
       <a class="navbar-brand" href="/">R</a>
       <div id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a id="home-button" class="nav-item nav-link" href="/">Home</a>
-          <a class="nav-item nav-link" href="/post/create">Create <i class="fas fa-plus"></i></a>
+          <a id="create-plus" class="nav-item nav-link" href="/post/create">Create <i class="fas fa-plus"></i></a>
         </div>
       </div>
     </div>
@@ -33,7 +33,7 @@
     <% if (userLoggedIn) { %>
       <div class="nav-right">
         <div class="profile">
-          <div class="icon-wrap">
+          <div id="profile-username-carrot" class="icon-wrap">
             <i class="fa-solid fa-user"></i>
             <span class="name">
               <%= user.handler %>
@@ -67,7 +67,7 @@
             <div class="navbar-nav">
               <div class="login-register">
                 <a class="nav-item nav-link" href="/login">Login</a>
-                <a class="nav-item nav-link" href="/register">Register</a>
+                <a id="register-button" class="nav-item nav-link" href="/register">Register</a>
               </div>
             </div>
           </div>

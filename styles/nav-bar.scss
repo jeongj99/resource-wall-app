@@ -173,9 +173,46 @@ nav .fa-user {
   padding-right: 0.5em;
 }
 
-// If screen size becomes reaches 700 pixels or smaller
-@media only screen and (max-width: 700px) {
-  .nav-left {
-    background-color: aqua;
+//This line prevents + on create from collapsing underneath create button when screen size shrinking
+@media only screen and (max-width: 903px) {
+  #create-plus {
+    display: flex;
+    align-items: center;
   }
 }
+
+// If screen size becomes reaches 700 pixels or smaller
+@media only screen and (max-width: 767px) {
+  .nav-left {
+    margin-right:auto;
+    padding-bottom: 0.5em;
+  }
+
+  .navbar-nav {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #home-button {
+    // margin-right: 5em;
+    padding-right: 1em;
+    padding-left: 0.5em;
+  }
+
+  .login-register {
+    padding-top: 0.5em;
+  }
+  #register-button {
+    padding-left: 1em;
+
+  }
+
+  .entire-nav-bar {
+    float: left;
+  }
+
+  .profile {
+    padding-top: 1em;
+  }
+}
+
