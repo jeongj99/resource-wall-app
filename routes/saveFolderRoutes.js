@@ -6,6 +6,9 @@ const saveFolderQueries = require('../db/queries/saveFolder');
 // COMMENTS - REST API CRUD
 // Create - POST
 router.post('/', (req, res) => {
+  if (!req.session.user_id) {
+    return res.redirect('/login');
+  }
   const newSaveFolder = {
     user_id: req.session.user_id,
     title: req.body.title
