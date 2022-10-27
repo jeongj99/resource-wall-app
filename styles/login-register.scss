@@ -1,6 +1,6 @@
 .body-login-register {
   width: 50%;
-  height: 65%;
+  height: 75%;
   background-color: #222;
   margin: 1.5em auto;
   background-image: url("https://www.transparenttextures.com/patterns/black-twill.png");
@@ -10,15 +10,31 @@
   align-items: center;
 }
 
+//All of the following lines have to deal with the login form
+.login-form label {
+  padding-top: 1em;
+}
+
 .login-form {
   display: flex;
   flex-direction: column;
+}
+
+.login-email {
+  display: flex;
+  align-items: center;
+}
+
+.login-password {
+  display: flex;
+  align-items: center;
 }
 
 .body-login-register:hover {
   box-shadow: 5px 10px #222;
 }
 
+//All of the following lines have to deal with the registration form
 .register-inputs {
   width: 26em;
   display: flex;
@@ -35,13 +51,11 @@
   justify-content: center;
 }
 
-.login-inputs {
-  width: 30em;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
+// -----------
 
-.login-form label {
-  padding-top: 1em;
-}
+// .login-inputs {
+//   width: 30em;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+// }
