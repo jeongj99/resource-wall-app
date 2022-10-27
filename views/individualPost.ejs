@@ -57,7 +57,7 @@
           <% } %>
             <div class="buttons-container">
             <form class="saveFolder-form" action="/api/saveFolder" method="POST">
-              <input name="post_id" type='text' value="<%= post.id %>" hidden />
+              <!-- <input name="post_id" type='text' value="<%= post.id %>" hidden /> -->
               <!-- Note: the name of the input must match with the correct property in the entity relationship sql table, as well as routes files -->
               <input class="saveFolder-submission" type="text" id="saveFolder-submission" name="title" required
               placeholder="Create a new folder here" style="width: 200px; margin: 1em 0" />
