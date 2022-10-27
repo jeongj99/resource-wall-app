@@ -35,10 +35,11 @@
 </head>
 
 <body>
-  <%- include('partials/_header') %>
+  <%- include('../partials/_header') %>
     <main class="body-login-register">
       <h1>Register for <span style="font-family: 'Pacifico'">Resource!</span></h1>
       <h3>All the resources you want, at the click of a button!</h3>
+      <span class="text-danger">This handler is already taken</span>
       <form class="register-form" action="/register" method="POST">
         <div class="form-group mb-2">
           <div class="register-inputs">

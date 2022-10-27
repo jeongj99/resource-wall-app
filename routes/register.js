@@ -26,7 +26,7 @@ router.post('/', (req, res) => {
     }
     registerHelpers.getUserByHandler(handler).then(user => {
       if (user) {
-        return res.send('handler already taken');
+        return res.render('./errors/handlerTakenRegister', { userLoggedIn });
       } else {
         const hashedPassword = bcrypt.hashSync(password, 10);
         const finalHandler = `@${handler}`;
