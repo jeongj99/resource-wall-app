@@ -6,6 +6,7 @@ const sassMiddleware = require('./lib/sass-middleware');
 const express = require('express');
 const morgan = require('morgan');
 const cookieSession = require('cookie-session');
+const methodOverride = require('method-override');
 
 const PORT = process.env.PORT || 8080;
 const app = express();
@@ -29,6 +30,7 @@ app.use(cookieSession({
   name: 'session',
   keys: ['alex', 'jordan']
 }));
+app.use(methodOverride('_method'));
 app.use(express.static('public'));
 
 // Separated Routes for each Resource
@@ -44,7 +46,7 @@ const commentsRoutes = require('./routes/comments')
 const ratingRoutes = require('./routes/ratings')
 const savePostRoutes = require('./routes/savePostRoutes')
 const saveFolderRoutes = require('./routes/saveFolderRoutes')
-
+const myStuffRoute = require('./routes/myStuff');
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
@@ -59,6 +61,7 @@ app.use('/api/comments', commentsRoutes)
 app.use('/api/ratings', ratingRoutes)
 app.use('/api/savePost', savePostRoutes)
 app.use('/api/saveFolder', saveFolderRoutes)
+app.use('/my-stuff', myStuffRoute);
 app.use('/users', usersRoutes);
 // Note: mount other resources here, using the same pattern above
 

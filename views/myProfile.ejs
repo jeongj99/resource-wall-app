@@ -1,10 +1,7 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <!-- Bootstrap CSS for NAV BAR -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" />
@@ -23,39 +20,37 @@
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@300;400;500;700&display=swap"
     rel="stylesheet">
 
-  <!-- Bootstrap CSS -->
+
+  <title>Home | My Profile</title>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
   <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/nav-bar.css" />
-  <link rel="stylesheet" href="/styles/search-bar.css" />
-  <link rel="stylesheet" href="/styles/login-register.css" />
+  <link rel="stylesheet" href="/styles/my-profile.css" />
 
-  <title>Resource | Login</title>
+
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/app.js"></script>
+
+  <!-- App JS -->
+  <script type="text/javascript" src="../public/scripts/app.js"></script>
 </head>
 
 <body>
   <%- include('partials/_header') %>
-
-    <main class="body-login-register">
-      <h1>Login in to <span style="font-family: 'Pacifico'">Resource!</span></h1>
-      <h3>Login with your username and password below:</h3>
-      <form class="login-form" action="/login" method="POST">
-        <div class="form-group mb-2">
-          <div class="login-inputs">
-            <label for="email">Email:</label>
-            <input class="form-control" type="email" id="email" name="email" required
-              placeholder="Enter your username here..." style="width: 300px; margin: 1em 0" />
-          </div>
-          <div class="login-inputs">
-            <label for="pasword">Password:</label>
-            <input class="form-control" type="password" id="password" name="password" required
-              placeholder="Enter your password here..." style="width: 300px; margin: 1em 0" />
-          </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Login</button>
-      </form>
+    <main class="my-profile">
+      <div class="profile-pic">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png">
+      </div>
+      <h3><%= user.first_name %> <%= user.last_name %></h3>
+      <h4><%= user.handler %></h4>
+      <a href="/my-profile/edit">Edit Profile</a>
     </main>
 </body>
 

@@ -1,0 +1,14 @@
+main.my-profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items:center;
+  align-content: space-between;
+  margin: 50px 0;
+}
+
+.profile-pic img {
+  margin-bottom: 25px;
+  object-fit: cover;
+  border-radius: 50%;
+}

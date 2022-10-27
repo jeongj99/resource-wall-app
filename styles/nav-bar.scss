@@ -17,6 +17,9 @@ a {
   text-transform: uppercase;
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100vw;
 }
 
 .navbar-brand {
@@ -64,6 +67,11 @@ nav .icon-wrap {
   cursor: pointer;
 }
 
+a.menu {
+  width: 100%;
+  text-align: center;
+}
+
 nav .profile .profile_drop_down {
   position: absolute;
   top: 55px;
@@ -72,7 +80,7 @@ nav .profile .profile_drop_down {
   background: #222;
   border: 1px solid #6d0019;
   width: 200px;
-  height: 108px;
+  height: 164px;
   display: none;
   border-radius: 3px;
   box-shadow: 10px 10px 35px rgba(74, 25, 25, 0.896),
