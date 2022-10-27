@@ -59,6 +59,16 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
+//Starting here we will address items in middle of nav bar
+
+//This allows for spacing between the search bar and button
+
+#nav-search-input {
+  margin-right: 1em;
+  width: 30em;
+}
+
+//Starting here we will address things on the right side of nav BAR
 nav .profile {
   padding-right: 1em;
   padding-bottom: 0.6em;
