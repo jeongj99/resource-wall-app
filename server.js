@@ -42,11 +42,12 @@ const loginRoute = require('./routes/login');
 const logoutRoute = require('./routes/logout');
 const postRoute = require('./routes/post');
 const usersRoutes = require('./routes/users');
-const commentsRoutes = require('./routes/comments')
-const ratingRoutes = require('./routes/ratings')
-const savePostRoutes = require('./routes/savePostRoutes')
-const saveFolderRoutes = require('./routes/saveFolderRoutes')
+const commentsRoutes = require('./routes/comments');
+const ratingRoutes = require('./routes/ratings');
+const savePostRoutes = require('./routes/savePostRoutes');
+const saveFolderRoutes = require('./routes/saveFolderRoutes');
 const myStuffRoute = require('./routes/myStuff');
+const folderRoute = require('./routes/folder');
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
@@ -57,12 +58,13 @@ app.use('/login', loginRoute);
 app.use('/logout', logoutRoute);
 app.use('/post', postRoute);
 // app.use('/api/users', userApiRoutes);
-app.use('/api/comments', commentsRoutes)
-app.use('/api/ratings', ratingRoutes)
-app.use('/api/savePost', savePostRoutes)
-app.use('/api/saveFolder', saveFolderRoutes)
+app.use('/api/comments', commentsRoutes);
+app.use('/api/ratings', ratingRoutes);
+app.use('/api/savePost', savePostRoutes);
+app.use('/api/saveFolder', saveFolderRoutes);
 app.use('/my-stuff', myStuffRoute);
 app.use('/users', usersRoutes);
+app.use('/folder', folderRoute);
 // Note: mount other resources here, using the same pattern above
 
 // Home page

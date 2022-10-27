@@ -30,7 +30,23 @@ const getFoldersByUserId = userId => {
     });
 };
 
+const getFolderByFolderId = folderId => {
+  const queryString = `
+  SELECT *
+  FROM folders
+  WHERE id = $1
+  `;
+  return db.query(queryString, [folderId])
+    .then(data => {
+      return data.rows[0];
+    })
+    .catch(error => {
+      console.log(error.message);
+    });
+};
+
 module.exports = {
   getPostsByUserId,
-  getFoldersByUserId
+  getFoldersByUserId,
+  getFolderByFolderId
 };
