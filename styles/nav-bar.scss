@@ -20,6 +20,8 @@ a {
   position: fixed;
   top: 0;
   width: 100vw;
+  //The z-index line gives the  navbar the utmost priority and prevents placeholders from appearing in nav bar for whatever reason.
+  z-index: 1;
 }
 
 .navbar-brand {
