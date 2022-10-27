@@ -40,13 +40,44 @@
 <body>
   <%- include('partials/_header') %>
     <main>
+      <h2 class="myStuffHeaders">My Folders</h2>
       <section class="myFolders">
-        <h2>My Folders</h2>
-
+        <div class="allFolders">
+          <% for (const folder of folders) { %>
+            <div class="eachFolder">
+              <a href="/">
+                <i class="fa-solid fa-folder"></i>
+              </a>
+              <span class="folderTitle">
+                <%= folder.title %>
+              </span>
+            </div>
+            <% } %>
+        </div>
       </section>
-
+      <h2 class="myStuffHeaders">My Posts</h2>
       <section class="myPosts">
-        <h2>My Posts</h2>
+        <div class="allPosts">
+          <% for (const post of posts) { %>
+            <div class="eachPost">
+              <a href="/post/<%= post.id %>">
+                <% if (post.photo_url==='' ) { %>
+                  <div class="imageContainer">
+                    <img src="https://www.nbmchealth.com/wp-content/uploads/2018/04/default-placeholder.png" width="350"
+                      height="350">
+                  </div>
+                  <% } else { %>
+                    <div class="imageContainer">
+                      <img src="<%= post.photo_url %>">
+                      <% } %>
+                    </div>
+              </a>
+              <span class="postTitle">
+                <%= post.title %>
+              </span>
+            </div>
+            <% } %>
+        </div>
       </section>
     </main>
 

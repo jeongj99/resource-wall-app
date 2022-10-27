@@ -1,9 +1,58 @@
+.myStuffHeaders {
+  width: 100%;
+  text-align: center;
+}
+
 .myFolders {
   height: 50%;
-  background: blue;
+  background-color: #222;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-x: scroll;
 }
 
 .myPosts {
   height: 50%;
-  background: green;
+  background-color: #222;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-x: scroll;
+}
+
+.allFolders,
+.allPosts {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+
+.eachFolder,
+.eachPost {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  padding: 0 15%;
+}
+
+.eachFolder i:hover {
+  color: #6d0019;
+}
+
+.folderTitle {
+  text-align: center;
+}
+
+.eachFolder a {
+  font-size: 100px;
+}
+
+.eachPost a img {
+  height: 200px;
+  width: 200px;
+}
+
+.postTitle {
+  text-align: center;
 }
