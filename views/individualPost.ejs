@@ -59,24 +59,25 @@
             <div class="buttons-container">
               <form class="saveFolder-form" action="/api/saveFolder" method="POST">
                 <input name="post_id" type='text' value="<%= post.id %>" hidden />
-                <!-- Note: the name of the input must match with the correct property in the entity relationship sql table, as well as routes files -->
+                <!-- NOTE: the name of the input must match with the correct property in the entity relationship sql table, as well as routes files -->
                 <input class="saveFolder-submission" type="text" id="saveFolder-submission" name="title" required
-                  placeholder="Create a new folder here" style="width: 200px; margin: 1em 0" />
+                  placeholder="Create a new folder here" style="width: 200px; margin: 1em 0" maxlength="30" />
                 <button id="saveFolder-button" type="submit" class="btn btn-primary">Submit</button>
               </form>
               <form class="savePost-form" action="/api/savePost" method="POST">
+                <!-- NOTE: post_id is required on this button as this information needs to be provided in request in order to successfully route back to current post -->
                 <input name="post_id" type='text' value="<%= post.id %>" hidden />
                 <select id="userFolders" name="folder_id" required>
-                  <option value="">Select</option>
+                  <option value="">Select Folder</option>
                   <% for (const value of userFolders) {%>
-                    <!-- Important note: the value here is set to id, so when a post request goes through savePostRoutes, an id is passed to folder_id -->
+                    <!-- NOTE: the value here is set to id, so when a post request goes through savePostRoutes, an id is passed to folder_id -->
                     <option value="<%= value.id %>">
                       <%= value.title %>
                     </option>
                     <% } %>
                 </select>
                 <button id="savePost-button" class="btn btn-primary" type="submit"><i
-                    class="fa-solid fa-bookmark"></i></button>
+                    class="save-folder-button"></i>Save</button>
               </form>
             </div>
             <div class="description-url-container">
