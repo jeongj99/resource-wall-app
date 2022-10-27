@@ -4,7 +4,6 @@ const db = require('../connection');
 //This function will be called within the saveFolders route within the routes folder.
 
 const createSaveFolder = (body) => {
-  console.log('body', body)
   const queryString =
   `INSERT INTO folders(user_id, title) VALUES ($1, $2) RETURNING *`
   return db.query(queryString, [body.user_id, body.title])

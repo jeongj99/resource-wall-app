@@ -5,9 +5,8 @@ const db = require('../connection');
 const createSavePost = (body) => {
   const queryString =
   `INSERT INTO saved_posts (user_id, folder_id, post_id) VALUES ($1, $2, $3) RETURNING *`
-  return db.query(queryString, [body.user_id, 1, body.post_id])
+  return db.query(queryString, [body.user_id, body.folder_id, body.post_id])
   .then((data) => {
-    console.log(data.rows[0]);
     return data.rows[0];
   })
   .catch((err) => {

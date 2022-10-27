@@ -2,16 +2,17 @@ const express = require('express');
 const router  = express.Router();
 
 const savePostQueries = require('../db/queries/savePost')
+//Important note for all future routes, when linking to front end, values past in each route must mach with names/values in front end.
 
 // COMMENTS - REST API CRUD
 // Create - POST
 router.post('/', (req, res) => {
+  console.log('req.body test for select button',req.body);
   const newSavePost = {
-    folder_id: 1,
+    folder_id: req.body.folder_id,
     user_id: req.session.user_id,
     post_id: req.body.post_id
   }
-  console.log(newSavePost);
   savePostQueries.createSavePost(newSavePost)
   .then((savePost) => {
     res.redirect(`/post/${req.body.post_id}`);

@@ -65,9 +65,10 @@
             </form>
             <form class="savePost-form" action="/api/savePost" method="POST">
               <input name="post_id" type='text' value="<%= post.id %>" hidden />
-              <select id="userFolders" name="userFolders">
+              <select id="userFolders" name="folder_id">
                 <% for (const value of userFolders) {%>
-                  <option value="<%= value.title %>"><%= value.title %></option>
+                  <!-- Important note: the value here is set to id, so when a post request goes through savePostRoutes, an id is passed to folder_id -->
+                  <option value="<%= value.id %>"><%= value.title %></option>
                   <% } %>
               </select>
             <button id="savePost-button" class="btn btn-primary" type="submit"><i class="fa-solid fa-bookmark"></i></button>
