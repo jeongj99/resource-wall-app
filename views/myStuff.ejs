@@ -45,7 +45,7 @@
         <form class="saveFolder-form" action="/my-stuff" method="POST">
           <!-- Note: the name of the input must match with the correct property in the entity relationship sql table, as well as routes files -->
           <input class="saveFolder-submission" type="text" id="saveFolder-submission" name="title" required
-            placeholder="Create a new folder here" style="width: 200px; margin: 1em 0" />
+            placeholder="Create a new folder here" style="width: 200px; margin: 1em 0" maxlength="30" />
           <button id="saveFolder-button" type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
