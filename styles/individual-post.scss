@@ -83,10 +83,15 @@
 }
 
 .comments-container {
-  width: 50%;
+  width: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
 }
 
 //Put comment text area on top of comment buutton
@@ -109,13 +114,50 @@
 
 }
 
-.comments {
-  border: 2px solid black;
+//Set size of comments timeline, individual comments will follow this size via 100% width
+.comments-timeline-container {
+  width: 500px;
 }
 
-.user-comments {
-  margin: 1em;
-  width: 45em;
-  height: 50px;
-  border-color: black;
+//Sets size and styles to each individual user comment
+.individual-comments-container {
+  margin-bottom: 1em;
+  border: 5px solid #222;
+  height: 125px;
+  width: 100%;
+  padding: 1.0em;
+  display: flex;
+}
+
+//Provides a nice shadow effect when hovering over each comment
+.individual-comments-container:hover {
+  box-shadow: 5px 10px #222;
+}
+
+.photo-comment {
+  width: 95%;
+  display: flex;
+  border-bottom: 2px solid #222;
+}
+
+//Apply spacing between profile photo and user text, as well as allow scroll if it is a long comment
+.user-comment {
+  margin-left: 1.5em;
+  display: flex;
+  align-items: center;
+  word-wrap: break-word;
+  overflow: scroll;
+}
+
+//The next two styles adjust the logo on the bottom right of the comment box
+.comment-footer {
+  font-family: 'Pacifico';
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: -1rem;
+  margin-left: 1rem;
+}
+
+.footer-text {
+  margin-bottom: 0;
 }

@@ -102,19 +102,26 @@
               <form id="post-comment-form" class="post-comment-form" method="POST" action="/api/comments">
                 <!-- This line helps us insert the post_id to be depositied alongside the rating, without having to ask user.  -->
                 <input name="post_id" type='text' value="<%= post.id %>" hidden />
-                <textarea name="comment" id="comment-text" class="comment-text" required></textarea>
+                <textarea name="comment" id="comment-text" class="comment-text" maxlength="255" required></textarea>
                 <button id="comment-post-button" class="comment-post-button" type="submit">Comment</button>
               </form>
             </section>
-            <section>
+            <section class="comments-timeline-container">
               <% for (const valueObj of comment) {%>
-                <div class="comments">
-                  <%= valueObj.comment %>
+                <div class="individual-comments-container">
+                  <div class="photo-comment">
+                    <i class="fa-solid fa-user fa-2x"></i>
+                    <p class="user-comment"><%= valueObj.comment %></p>
+                  </div>
+                  <footer class="comment-footer">
+                    <p class="footer-text">R</p>
+                  </footer>
                 </div>
                 <% } %>
-
             </section>
     </main>
+
+
 
     <!-- <section class="search-bar" style="margin: 1em;">
       <form class="search form-inline" action="/search" method="GET">
