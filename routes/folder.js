@@ -29,6 +29,7 @@ router.get('/:id', (req, res) => {
       }
       savePostHelpers.getAllPostsInfoThatAreSaved(postIds).then(posts => {
         const templateVars = {
+          folder,
           userLoggedIn,
           user,
           posts
