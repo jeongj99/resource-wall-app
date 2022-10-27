@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
   } else {
     const templateVars = {
       userLoggedIn: req.session.user_id
-    }
+    };
     res.render('login', templateVars);
   }
 });
@@ -17,12 +17,13 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
-  if (req.session.user_id) {
+  const userLoggedIn = req.session.user_id;
+  if (userLoggedIn) {
     return res.redirect('/');
   }
   loginHelpers.getUserByEmail(email).then(user => {
     if (!user || !bcrypt.compareSync(password, user.password)) {
-      return res.send('failed login');
+      return res.render('./errors/failedLogin', { userLoggedIn });
     } else {
       req.session.user_id = user.id;
       return res.redirect('/');
