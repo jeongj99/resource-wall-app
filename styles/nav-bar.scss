@@ -83,6 +83,7 @@ nav .profile {
   flex-direction: row;
   align-items: stretch;
   margin: 0;
+  flex-wrap: nowrap;
 }
 
 nav .icon-wrap {
@@ -174,6 +175,10 @@ nav .fa-user {
   #create-plus {
     display: flex;
     align-items: center;
+  }
+
+  #search-button {
+    width: 9%
   }
 
 //This line prevents + on create from collapsing underneath create button when screen size shrinking
