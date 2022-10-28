@@ -1,11 +1,13 @@
 # Resource Wall App
 
-## Screenshots
+Resource is a pinterest like application that allows you to create resources, save resources eithir individually or in folders, and share resources with friends. 
+
+## Final Product Screenshots
 
 ## Getting Started
-1. Create the `.env` if not present by using `.env.example` as a reference: `cp .env.example .env`
+1. If not present create the `.env` by using `.env.example` as a reference: `cp .env.example .env`
 2. Update the .env file with your correct local information
-  - Ex
+  - Example:
     - username: `labber` 
     - password: `labber` 
     - database: `midterm`
