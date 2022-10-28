@@ -1,8 +1,29 @@
 # Resource Wall App
 
-Resource is a pinterest like application that allows you to create resources, save resources eithir individually or in folders, and share resources with friends. 
+Resource is a pinterest like application that allows you to create resources, save resources eithir individually or in folders, and share resources with friends. Functionality for commenting and rating resources is also included!
 
 ## Final Product Screenshots
+
+### Resource - Registration Page
+
+!["Resource Registration"](https://github.com/jeongj99/resource-wall-app/blob/master/docs/Resource-registration.png?raw=true)
+
+### Resource - Home Page
+
+!["Resource Home"](https://github.com/jeongj99/resource-wall-app/blob/master/docs/resource-home-page.png?raw=true)
+
+### Resource - Individual Post Page
+
+!["Resource Post"](https://github.com/jeongj99/resource-wall-app/blob/master/docs/resource-individual-post.png?raw=true)
+
+### Resource - Create Post
+
+!["Resource Create"](https://github.com/jeongj99/resource-wall-app/blob/master/docs/resource-create-post.png?raw=true)
+
+### Resource - My Stuff Page
+
+!["Resource Create"](https://github.com/jeongj99/resource-wall-app/blob/master/docs/resource-my-stuff.png?raw=true)
+
 
 ## Getting Started
 1. If not present create the `.env` by using `.env.example` as a reference: `cp .env.example .env`
