@@ -11,9 +11,7 @@ router.get('/', (req, res) => {
   } else {
     homeHelpers.getUserById(userLoggedIn).then(user => {
       myStuffHelpers.getFoldersByUserId(userLoggedIn).then(folders => {
-        console.log(folders);
         myStuffHelpers.getPostsByUserId(userLoggedIn).then(posts => {
-          console.log(posts);
           res.render('myStuff', { userLoggedIn, user, folders, posts });
         })
           .catch(error => {

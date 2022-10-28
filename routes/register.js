@@ -16,16 +16,17 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   const { firstName, lastName, email, password, handler } = req.body;
-  if (req.session.user_id) {
+  const userLoggedIn = req.session.user_id;
+  if (userLoggedIn) {
     return res.redirect('/');
   }
   registerHelpers.getUserByEmail(email).then(user => {
     if (user) {
-      return res.send('email already taken');
+      return res.render('./errors/emailTakenRegister', { userLoggedIn });
     }
     registerHelpers.getUserByHandler(handler).then(user => {
       if (user) {
-        return res.send('handler already taken');
+        return res.render('./errors/handlerTakenRegister', { userLoggedIn });
       } else {
         const hashedPassword = bcrypt.hashSync(password, 10);
         const finalHandler = `@${handler}`;
