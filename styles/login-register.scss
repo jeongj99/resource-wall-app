@@ -8,6 +8,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: auto;
 }
 
 //All of the following lines have to deal with the login form
@@ -18,6 +19,7 @@
 .login-form {
   display: flex;
   flex-direction: column;
+  width: 55%;
 }
 
 .login-email {
@@ -36,7 +38,7 @@
 
 //All of the following lines have to deal with the registration form
 .register-inputs {
-  width: 26em;
+  // width: 26em;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

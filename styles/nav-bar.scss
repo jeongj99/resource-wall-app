@@ -173,6 +173,11 @@ nav .fa-user {
   padding-right: 0.5em;
 }
 
+#create-plus {
+  display: flex;
+  align-items: center;
+}
+
 //This line prevents + on create from collapsing underneath create button when screen size shrinking
 @media only screen and (max-width: 903px) {
   #create-plus {
