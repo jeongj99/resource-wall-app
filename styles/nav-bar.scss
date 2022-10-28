@@ -2,9 +2,6 @@
 * {
   margin: 0;
   padding: 0;
-  list-style: none;
-  box-sizing: border-box;
-  text-decoration: none;
 }
 
 a {
@@ -128,6 +125,7 @@ nav .profile .profile_drop_down:before {
 
 nav .profile .profile_drop_down ul li {
   border-bottom: 1px solid #f1f2f4;
+  list-style: none;
 }
 
 nav .profile .profile_drop_down ul li:last-child {
