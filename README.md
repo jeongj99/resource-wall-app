@@ -1,6 +1,6 @@
 # Resource Wall App
 
-Resource is a pinterest like application that allows you to create resources, save resources eithir individually or in folders, and share resources with friends. Functionality for commenting and rating resources is also included!
+Resource is a pinterest like application that allows you to create resources, save resources either individually or in folders, and share resources with friends. Functionality for commenting and rating resources is also included!
 
 ## Final Product Screenshots
 
